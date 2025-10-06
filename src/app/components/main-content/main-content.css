@@ -1,0 +1,54 @@
+/* El host del componente debe comportarse como flex-item que crece */
+:host{
+  display: block;
+  flex: 1 1 auto;     /* ocupa todo el espacio restante */
+  min-width: 0;       /* evita que el contenido fuerce ancho fijo */
+}
+
+/* Área principal */
+.content {
+  background: linear-gradient(120deg, #f6f8fb 80%, #fff 100%);
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-height: 400px;
+}
+.embed-wrap {
+  width: 100%;
+  height: 80vh;
+  border: 1px solid #fff;
+  overflow: hidden; /* evita scroll nativo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.embed-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.panzoom-container {
+  width: 100%;
+  height: 80vh; /* o el alto que quieras */
+  overflow: hidden; /* evita que la imagen se salga visualmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panzoom-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+.panzoom-image {
+  display: block;
+  max-width: none;   /* evita que la imagen se ajuste al ancho */
+  max-height: none;  /* permite que se expanda */
+  cursor: grab;
+}

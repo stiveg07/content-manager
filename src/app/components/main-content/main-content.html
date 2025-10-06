@@ -1,0 +1,24 @@
+<main class="content">
+  @if (safeLink) {
+    <div class="container-fluid ">
+      <h1 class="h5 fw-semibold mb-2">{{title | removeExtension}}</h1>
+    </div>
+
+    <div class="embed-wrap">
+      @if(isHtml) {
+        <iframe class="embed-frame" [src]="safeLink" title="Vista de documento"></iframe>
+      }
+
+      @if(isImage) {
+        <div #panzoomContainer class="panzoom-container">
+          <img class="panzoom-image" [src]="safeLink" [alt]="title" />
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="container-fluid py-3 ">
+      <h1 class="h5 fw-semibold mb-2">Contenido Principal</h1>
+      <p class="text-secondary mb-4">Selecciona un documento del menú.</p>
+    </div>
+  }
+</main>

@@ -1,0 +1,122 @@
+/* Layout sidebar */
+.sidebar.soft {
+	width: var(--sidebar-width);
+	min-width: 260px;
+	background: var(--card-bg);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	height: 100%;
+	overflow-y: auto;
+	padding: 32px 24px;
+}
+
+/* Títulos y encabezados */
+.sidebar-header {
+	padding: 16px;
+	border-bottom: 1px solid var(--line-200);
+}
+.sidebar-header h6 {
+	font-weight: 700;
+	color: var(--text-main);
+	font-size: 1.15rem;
+}
+
+/* Estilo de búsqueda */
+.search-wrapper {
+	padding: 16px;
+	margin-bottom: 18px;
+}
+.soft-input {
+	background: var(--primary-bg);
+	border: 1.5px solid var(--accent-bg);
+	border-radius: 12px;
+	height: 42px;
+	font-size: 1rem;
+	padding-left: 40px;
+	transition: border-color 0.2s, box-shadow 0.2s;
+	box-shadow: 0 2px 8px rgba(74, 144, 226, 0.07);
+}
+
+.soft-input:focus {
+	border-color: var(--primary);
+	box-shadow: 0 0 0 2px var(--primary)30;
+}
+
+.search-icon {
+	position: absolute;
+	left: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #4a90e2;
+	font-size: 1.2rem;
+}
+
+.soft-input::placeholder {
+	color: var(--ink-500);
+}
+
+/* Elementos de navegación (íconos + texto) */
+.tree {
+	padding: 0;
+	list-style: none;
+}
+
+.tree li {
+	padding: 12px 18px;
+	margin: 8px 0;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	color: var(--ink-900);
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+	background: var(--primary-bg);
+	box-shadow: 0 2px 8px rgba(74, 144, 226, 0.07);
+}
+
+.tree li:hover, .tree-item:focus-within .item-row {
+	background: var(--accent-bg);
+	color: var(--primary);
+}
+
+.tree li .icon {
+	font-size: 1.2rem;
+	margin-right: 16px;
+	color: var(--ink-700);
+}
+
+.tree li .badge {
+	background: var(--line-100);
+	color: var(--ink-700);
+	font-size: 0.9rem;
+	padding: 4px 8px;
+	border-radius: 999px;
+	margin-left: auto;
+}
+
+.empty-state {
+	color: #bcd0ee;
+	font-size: 1.1rem;
+	text-align: center;
+	padding: 28px 0;
+}
+
+.empty-state i {
+	font-size: 2rem;
+}
+
+.empty-state .fw-semibold {
+	font-size: 1rem;
+}
+
+/* Estilo badge */
+.badge-soft {
+	background: var(--badge);
+	color: var(--ink-700);
+	border: 1px solid #eceff3;
+	border-radius: 999px;
+	font-weight: 600;
+	font-size: 12px;
+	padding: 2px 8px;
+}

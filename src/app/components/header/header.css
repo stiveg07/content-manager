@@ -1,0 +1,54 @@
+:root {
+	--header-bg: #4a90e2; /* Fondo azul atractivo */
+	--header-bg-hover: #357abd; /* Fondo al pasar el mouse */
+	--text-primary: #ffffff; /* Color blanco para el texto */
+	--text-secondary: #d1e1f3; /* Color más suave para el subtítulo */
+	--border-radius: 12px; /* Bordes suaves */
+	--shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.app-header {
+  background: var(--primary-bg);
+  border-bottom: 1px solid var(--accent-bg);
+  box-shadow: var(--shadow);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-fluid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;         /* Reduce el espacio entre elementos */
+  padding: 0 32px;
+}
+
+.brand-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: var(--text-main);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-right: 6px; /* Reduce el margen derecho */
+  box-shadow: 0 2px 8px rgba(74,144,226,0.10);
+}
+
+.brand-title {
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1.35rem;
+  letter-spacing: 1px;
+}
+
+.brand-subtitle {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 12px;
+}

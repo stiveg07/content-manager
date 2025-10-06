@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+/* Fuente base */
+:root {
+  --primary-bg: #f6f8fb;
+  --card-bg: #fff;
+  --accent-bg: #e3eaf6;
+  --primary: #4a90e2;
+  --secondary: #8fd400;
+  --text-main: #222;
+  --text-muted: #7a8ca3;
+  --radius: 18px;
+  --shadow: 0 8px 32px rgba(74,144,226,0.10);
+}
+
+body {
+  background: linear-gradient(120deg, #f6f8fb 80%, #e3eaf6 100%);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* Scrollbar más elegante */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
