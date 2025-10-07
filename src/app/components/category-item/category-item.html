@@ -1,12 +1,21 @@
-<li class="tree-item" [class.has-children]="hasChildren" [class.expanded]="item.expanded" [class.level-0]="level === 0"
-	[class.level-1]="level === 1" [class.level-2]="level >= 2" [style.--indent.px]="level * 16">
+<li
+	class="tree-item"
+	[class.has-children]="hasChildren"
+	[class.expanded]="item.expanded"
+	[class.level-0]="level === 0"
+	[class.level-1]="level === 1"
+	[class.level-2]="level >= 2"
+	[style.--indent.px]="level * 16"
+>
 	<div class="item-row d-flex align-items-center w-100" (click)="onRowClick($event)">
 		@if(hasChildren){
 		<i class="bi caret" [ngClass]="item.expanded ? 'bi-chevron-down' : 'bi-chevron-right'"></i>
 		}
 		<i class="bi type-icon" [ngClass]="item.icon || (hasChildren ? 'bi-folder' : 'bi-file-earmark')"></i>
-		<span class="label flex-grow-1 text-truncate">{{item.icon === 'folder' ? '📁' : '📄'}} {{ item.name |
-			removeExtension }}</span>
+		<span class="label flex-grow-1 text-truncate">
+			<span [innerHTML]="item.icon == 'folder' ? '📁' : this.getIconForExtension(this.getFileExtension(item.name))"></span>
+			{{ item.name | removeExtension }}
+		</span>
 		@if(item.count > 0){
 		<span class="badge-soft ms-2">{{ item.count }}</span>
 		}
@@ -16,9 +25,7 @@
 	<ul class="list-unstyled children">
 		@for(category of item.children;track category){
 		<app-category-item [item]="category" [level]="level + 1" (select)="select.emit($event)"></app-category-item>
-
 		}
-
 	</ul>
 	}
 </li>
