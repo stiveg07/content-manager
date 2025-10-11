@@ -1,54 +1,27 @@
-:root {
-	--header-bg: #4a90e2; /* Fondo azul atractivo */
-	--header-bg-hover: #357abd; /* Fondo al pasar el mouse */
-	--text-primary: #ffffff; /* Color blanco para el texto */
-	--text-secondary: #d1e1f3; /* Color más suave para el subtítulo */
-	--border-radius: 12px; /* Bordes suaves */
-	--shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+.page-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 16px; background:var(--surface);
+  border:1px solid var(--border); border-radius:20px; box-shadow:var(--shadow);
 }
+.title h1{margin:0; font-size:28px; line-height:1.1; letter-spacing:-.02em}
+.subtitle{display:block; color:var(--muted); font-size:13px; margin-top:2px}
 
-.app-header {
-  background: var(--primary-bg);
-  border-bottom: 1px solid var(--accent-bg);
-  box-shadow: var(--shadow);
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header-right{display:flex; align-items:center; gap:10px}
+.badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:11px; color:var(--muted);
+  background:var(--surface-2); border:1px solid var(--border);
+  padding:4px 8px; border-radius:999px; margin-right:8px;
 }
-
-.container-fluid {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;         /* Reduce el espacio entre elementos */
-  padding: 0 32px;
+.mini-avatar{width:28px; height:28px; border-radius:8px; background:#ffd3a6; border:1px solid var(--border)}
+.user summary{list-style:none; cursor:pointer; display:flex; align-items:center}
+.user[open] .menu{
+  display:block;
 }
-
-.brand-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--secondary);
-  color: var(--text-main);
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-  font-size: 1.3rem;
-  margin-right: 6px; /* Reduce el margen derecho */
-  box-shadow: 0 2px 8px rgba(74,144,226,0.10);
+.user .menu{
+  display:none; position:absolute; right:24px; margin-top:8px;
+  background:#fff; border:1px solid var(--border); border-radius:12px;
+  box-shadow:var(--shadow); padding:10px; min-width:220px;
 }
-
-.brand-title {
-  font-weight: 700;
-  color: var(--text-main);
-  font-size: 1.35rem;
-  letter-spacing: 1px;
-}
-
-.brand-subtitle {
-  color: var(--primary);
-  font-size: 1rem;
-  font-weight: 500;
-  margin-left: 12px;
-}
+.menu-row{padding:6px 4px}
+.menu-row.muted{color:var(--muted); font-size:12px}

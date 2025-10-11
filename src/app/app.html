@@ -1,7 +1,11 @@
-<app-header></app-header>
-<div class="d-flex" style="height: calc(100dvh - 74px);">
-  @if(!isLoading && categories){
-  <app-category-sidebar class="py-2 px-2" [categories]="categories" (categorySelected)="active = $event"></app-category-sidebar>
-  <app-main-content class="py-2 px-2" [activeCategory]="active"></app-main-content>
-  }
+<div class="app-shell">
+  <aside class="sidebar">
+    @if(!isLoading && categories){
+    <app-category-sidebar [categories]="categories" (categorySelected)="active = $event"></app-category-sidebar>
+    }
+  </aside>
+
+  <main class="workspace">
+    <app-main-content [activeCategory]="active"></app-main-content>
+  </main>
 </div>

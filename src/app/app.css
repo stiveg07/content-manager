@@ -1,75 +1,82 @@
-.app-layout {
+:root{
+  --bg:#f5efe9;
+  --surface:#ffffff;
+  --surface-2:#f8f7f5;
+  --border:#e8e3dd;
+  --text:#1d1d1f;
+  --muted:#6b6f76;
+  --brand:#ff7a1a;
+  --radius:16px;
+  --shadow:0 1px 1px rgba(0,0,0,.03), 0 10px 24px rgba(0,0,0,.06);
+   --sidebar-w: 320px;  /* <-- cámbialo aquí si quieres otro valor */
+  --gap: 20px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font:14.5px/1.45 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:linear-gradient(0deg,#efe7df, #efe7df) fixed;
+}
+
+.app-shell{
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr; /* << usa la variable */
+  gap: var(--gap);
+  padding: 20px;
+}
+
+/* Fija el ancho del panel izquierdo */
+.sidebar{
+  width: 264px;              /* ajusta si quieres 240/280 */
+  min-width: 264px;
+  max-width: 264px;
+  overflow: hidden auto;     /* scroll vertical, oculta horizontal */
+  overscroll-behavior: contain;
+}
+
+/* El layout general en 2 columnas: sidebar fijo + contenido que crece */
+.app-shell{
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: 260px 1fr;  /* << ancho fijo del sidebar */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Contenedor derecho (main) en columna */
+.workspace{
+  min-width: 0;
   display: flex;
-  height: calc(100vh - 60px); /* resto header */
-  background-color: #f9fafb;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
 }
 
-.sidebar {
-  width: 280px;
-  background: #fff;
-  border-right: 1px solid #e5e7eb;
-  padding: 1rem;
-  overflow-y: auto; /* scroll vertical */
-  max-height: calc(100vh - 60px); /* ajuste con header */
+/* Responsive */
+@media (max-width: 980px){
+  .app-shell{grid-template-columns: 88px 1fr}
+  .sidebar .label{display:none}
+  .sidebar .search{display:none}
+  .sidebar .profile .meta{display:none}
+  .sidebar .profile{padding:8px}
 }
 
-.sidebar-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #6b7280;
-  margin-bottom: 0.8rem;
+.app-shell{
+  height: 100dvh;              /* ocupa todo el viewport */
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  padding: 20px;
+  min-height: 0;               /* clave para que los hijos puedan encoger */
 }
-
-.category-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.search-input {
-  border-radius: 0 10px 10px 0 !important;
-}
-
-.input-group-text {
-  border-radius: 10px 0 0 10px !important;
-}
-
-.content {
-  flex: 1;
-  padding: 2rem;
-  overflow-y: auto;
-}
-
-.content-title {
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-}
-
-.content-subtitle {
-  color: #6b7280;
-  margin-bottom: 2rem;
-}
-
-.card {
-  border: none;
-  border-radius: 12px;
-}
-
-.hover-card {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.hover-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+.workspace{
+  min-width: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
 }

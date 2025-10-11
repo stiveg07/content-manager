@@ -60,7 +60,7 @@ export class CategoryItem {
 		if (!extension) {
 			return "file"; // Default icon for files without extension
 		}
-		debugger;
+
 		return `<span class="badge bg-light text-dark">${extension.toLowerCase()}</span>`;
 		// if (["png", "jpg", "jpeg", "svg", "gif"].includes(extension.toLowerCase())) {
 		// 	return '<span class="badge bg-light">image</span>';
@@ -80,4 +80,22 @@ export class CategoryItem {
 		// 	return "";
 		// }
 	}
+
+	toggle(ev: MouseEvent) {
+		// ev.stopPropagation();
+		// this.item.expanded = !this.item.expanded;
+		ev.stopPropagation();
+		ev.preventDefault();
+
+		if (this.item.link && !this.hasChildren) {
+			this.select.emit(this.item);
+			return;
+		}
+		if (this.hasChildren) {
+			this.item.expanded = !this.item.expanded;
+			return;
+		}
+		this.select.emit(this.item);
+	}
+
 }
