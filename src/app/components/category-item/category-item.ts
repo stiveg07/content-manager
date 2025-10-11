@@ -61,7 +61,7 @@ export class CategoryItem {
 			return "file"; // Default icon for files without extension
 		}
 
-		return `<span class="badge bg-light text-dark">${extension.toLowerCase()}</span>`;
+		return `<span class="badge text-bg-light border border-dark">${extension.toLowerCase()}</span>`;
 		// if (["png", "jpg", "jpeg", "svg", "gif"].includes(extension.toLowerCase())) {
 		// 	return '<span class="badge bg-light">image</span>';
 		// } else if (["html", "htm"].includes(extension.toLowerCase())) {
